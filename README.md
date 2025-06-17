@@ -34,12 +34,12 @@ Modifikasi dilakukan dengan pendekatan modular, memisahkan logika HTTP dari pena
 
 ## Instruksi Pengoperasian
 
-### 1\. Prasyarat
+### 1. Prasyarat
 
   - Python 3
   - Sebuah berkas untuk diunggah (contoh: `file_untuk_diupload.txt`)
 
-### 2\. Memulai Server
+### 2. Memulai Server
 
 Pilih salah satu modus server dan jalankan di terminal:
 
@@ -55,7 +55,7 @@ python3 server_thread_pool_http.py
 python3 server_process_pool_http.py
 ```
 
-### 3\. Memulai Klien
+### 3. Memulai Klien
 
 Buka terminal baru dan jalankan klien interaktif. Pastikan variabel `SERVER_HOST` dan `SERVER_PORT` di dalam `client.py` telah sesuai dengan server yang Anda operasikan.
 
@@ -71,10 +71,7 @@ Ikuti petunjuk menu untuk berinteraksi dengan server.
 
 Pengujian dilakukan dengan dua klien yang beroperasi secara simultan untuk membuktikan kemampuan server dalam menangani koneksi secara bersamaan.
 
-### 1\. Skenario Pengujian dengan Server Modus Kumpulan Utas (*Thread Pool*)
-
-\<details\>
-\<summary\>\<strong\>Klik untuk melihat log lengkap pengujian Kumpulan Utas\</strong\>\</summary\>
+### 1. Skenario Pengujian dengan Server Modus Kumpulan Utas (*Thread Pool*)
 
 **Log dari Terminal Server:**
 
@@ -149,12 +146,8 @@ Pilih Opsi (1-4): 4
 Terima kasih, program keluar.
 ```
 
-\</details\>
 
-### 2\. Skenario Pengujian dengan Server Modus Multiprocess
-
-\<details\>
-\<summary\>\<strong\>Klik untuk melihat log lengkap pengujian Multiprocess\</strong\>\</summary\>
+### 2. Skenario Pengujian dengan Server Modus Multiprocess
 
 **Log dari Terminal Server:**
 
@@ -172,14 +165,11 @@ Terima kasih, program keluar.
 **Log dari Terminal Klien 1 & 2:**
 *(Hasil interaksi pada klien identik dengan pengujian Kumpulan Utas, membuktikan fungsionalitas server konsisten di kedua modus.)*
 
-\</details\>
-
 -----
 
 ## Kode Sumber Utama
 
-\<details\>
-\<summary\>\<strong\>`http.py`\</strong\>\</summary\>
+### http.py
 
 ```python
 import sys
@@ -325,10 +315,7 @@ if __name__ == "__main__":
     httpserver = HttpServer()
 ```
 
-\</details\>
-
-\<details\>
-\<summary\>\<strong\>`client.py`\</strong\>\</summary\>
+### client.py
 
 ```python
 import sys
@@ -440,10 +427,7 @@ if __name__ == '__main__':
 
 ```
 
-\</details\>
-
-\<details\>
-\<summary\>\<strong\>`server_thread_pool_http.py` (Mesin Kumpulan Utas)\</strong\>\</summary\>
+### server_thread_pool_http.py
 
 ```python
 from socket import *
@@ -517,10 +501,7 @@ if __name__ == "__main__":
 
 ```
 
-\</details\>
-
-\<details\>
-\<summary\>\<strong\>`server_process_pool_http.py` (Mesin Multiprocess)\</strong\>\</summary\>
+### server_process_pool_http.py
 
 ```python
 import socket
@@ -600,4 +581,3 @@ if __name__ == "__main__":
     main()
 
 ```
-\</details\>
